@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>현장스탬프 받기 | BoardStamp</title>
+<meta name="description" content="현장 사진에 공사명, 공종, 위치, 일자를 스탬프로 넣어 앨범에 바로 저장하는 앱">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://boardstamp.app/">
+<!-- 하나의 링크로 기기별 연결: 안드로이드는 Play 스토어, 아이폰은 준비 중 안내, PC는 QR 코드.
+     ?src=share 처럼 붙이면 Play 설치 출처(utm_source)로 넘어간다. -->
+<style>
+:root {
+  color-scheme: light dark;
+  --paper: #f5f4ef; --card: #ffffff; --ink: #15191e; --muted: #5c6268; --accent: #1f4e8c;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #14171a; --card: #1d232b; --ink: #ecebe4; --muted: #a7b0bc; --accent: #a9c7f5; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px;
+  background: var(--paper); color: var(--ink);
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  line-height: 1.6; word-break: keep-all; text-align: center;
+}
+main { width: 100%; max-width: 380px; background: var(--card); border-radius: 12px; padding: 32px 24px; }
+.icon { width: 72px; height: 72px; border-radius: 16px; }
+h1 { font-size: 22px; margin: 12px 0 4px; }
+p { margin: 0 0 16px; color: var(--muted); }
+.qr { display: none; background: #fff; border-radius: 12px; padding: 12px; width: 200px; margin: 0 auto 16px; }
+.qr img { display: block; width: 100%; height: auto; }
+.btn { display: inline-block; padding: 12px 20px; border-radius: 12px; background: var(--accent); color: var(--paper); font-weight: 600; text-decoration: none; }
+.home { display: inline-block; margin-top: 16px; color: var(--accent); }
+[hidden] { display: none !important; }
+body.desktop .qr { display: block; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="/img/icon-192.png" alt="" width="72" height="72">
+  <h1 data-ko="현장스탬프" data-en="BoardStamp">현장스탬프</h1>
+
+  <p id="msg-android" data-ko="Google Play로 이동하고 있어요…" data-en="Opening Google Play…">Google Play로 이동하고 있어요…</p>
+  <p id="msg-ios" hidden data-ko="iPhone 버전은 준비 중이에요. 지금은 안드로이드에서 쓸 수 있어요." data-en="The iPhone version is on the way. For now, BoardStamp is available on Android.">iPhone 버전은 준비 중이에요. 지금은 안드로이드에서 쓸 수 있어요.</p>
+  <p id="msg-desktop" hidden data-ko="휴대폰 카메라로 QR 코드를 찍으면 바로 받을 수 있어요." data-en="Scan the QR code with your phone camera to get the app.">휴대폰 카메라로 QR 코드를 찍으면 바로 받을 수 있어요.</p>
+
+  <div class="qr"><img src="/img/qr-get.svg" alt="boardstamp.app/get QR" width="200" height="200"></div>
+
+  <a id="play" class="btn" href="https://play.google.com/store/apps/details?id=app.boardstamp" data-ko="Google Play에서 받기" data-en="Get it on Google Play">Google Play에서 받기</a>
+  <br>
+  <a class="home" href="/" data-ko="앱 소개 보기" data-en="About the app">앱 소개 보기</a>
+</main>
+<script>
+(function () {
+  var PLAY = 'https://play.google.com/store/apps/details?id=app.boardstamp';
+  var params = new URLSearchParams(location.search);
+  var source = (params.get('src') || 'get').replace(/[^a-z0-9_-]/gi, '').slice(0, 30) || 'get';
+  var playUrl = PLAY + '&referrer=' + encodeURIComponent('utm_source=' + source + '&utm_medium=boardstamp_site');
+
+  var lang = (navigator.language || 'ko').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en';
+  document.documentElement.lang = lang;
+  if (lang === 'en') {
+    document.title = 'Get BoardStamp';
+    document.querySelectorAll('[data-en]').forEach(function (el) { el.textContent = el.getAttribute('data-en'); });
+  }
+
+  var play = document.getElementById('play');
+  play.href = playUrl;
+
+  var ua = navigator.userAgent;
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+  function show(id) {
+    ['msg-android', 'msg-ios', 'msg-desktop'].forEach(function (m) {
+      document.getElementById(m).hidden = m !== id;
+    });
+  }
+
+  if (isAndroid) {
+    show('msg-android');
+    location.replace(playUrl);
+  } else if (isIOS) {
+    show('msg-ios');
+    play.hidden = true;
+  } else {
+    show('msg-desktop');
+    document.body.classList.add('desktop');
+  }
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0c1ea7ea4ba44bdbac27b24f19ea35ee"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

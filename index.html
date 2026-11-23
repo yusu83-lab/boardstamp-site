@@ -3,20 +3,320 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>현장스탬프 (BoardStamp)</title>
-<meta name="description" content="공사 현장 사진에 공사명, 일자, 위치를 스탬프로 남기는 앱">
-<link rel="stylesheet" href="style.css">
+<title>현장스탬프 - 공사 사진에 공사명·위치·일자 스탬프, 보드판 없이 현장 기록</title>
+<meta name="description" content="공사 현장 사진에 공사명, 공종, 위치, 내용, 일자를 표 스탬프로 넣어 앨범에 바로 저장하는 타임스탬프 카메라 앱. 좌표·고도 표시, 현장별 앨범, 회원가입 없음.">
+<link rel="canonical" href="https://boardstamp.app/">
+<link rel="alternate" hreflang="ko" href="https://boardstamp.app/">
+<link rel="alternate" hreflang="en" href="https://boardstamp.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://boardstamp.app/en/">
+<meta name="theme-color" content="#1F4E8C">
+<link rel="icon" href="/img/icon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/img/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/img/icon-180.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="현장스탬프">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://boardstamp.app/">
+<meta property="og:title" content="현장스탬프 - 보드판 없이 현장 기록">
+<meta property="og:description" content="공사명·공종·위치·일자를 사진에 바로 넣어 앨범에 저장하는 안드로이드 앱">
+<meta property="og:image" content="https://boardstamp.app/img/og-ko.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="현장스탬프 앱 아이콘과 메인 화면">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/home.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "현장스탬프",
+  "alternateName": "BoardStamp",
+  "description": "공사 현장 사진에 공사명, 공종, 위치, 내용, 일자를 표 스탬프로 넣어 앨범에 바로 저장하는 앱",
+  "operatingSystem": "Android",
+  "applicationCategory": "BusinessApplication",
+  "url": "https://boardstamp.app/",
+  "downloadUrl": "https://play.google.com/store/apps/details?id=app.boardstamp",
+  "image": "https://boardstamp.app/img/icon-192.png",
+  "screenshot": "https://boardstamp.app/img/ko/shot-1.webp",
+  "inLanguage": ["ko", "en"],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+  "author": { "@type": "Person", "name": "ssanPD", "email": "ssancoding@gmail.com" }
+}
+</script>
 </head>
 <body>
-<main>
-<article>
-<h1>현장스탬프</h1>
-<p class="meta">BoardStamp</p>
-<p>공사 현장 사진에 공사명, 일자, 위치를 스탬프로 남기는 앱입니다.</p>
-<p lang="en">Stamp construction site photos with the project name, date and location.</p>
-<p><a href="privacy.html">개인정보처리방침 / Privacy Policy</a></p>
-<p>문의 / Contact: <a href="mailto:ssancoding@gmail.com">ssancoding@gmail.com</a></p>
-</article>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<div class="lang-bar" id="lang-bar" hidden lang="en">
+  <div class="wrap">
+    <a href="/en/">View this page in English</a>
+    <button type="button" id="lang-bar-close" aria-label="Close">×</button>
+  </div>
+</div>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img src="/img/icon-192.png" width="32" height="32" alt="">
+      <span class="od-field">
+        <b>현장스탬프</b>
+        <span>BOARDSTAMP</span>
+      </span>
+    </a>
+    <a class="head-cta" href="https://play.google.com/store/apps/details?id=app.boardstamp&amp;referrer=utm_source%3Dsite%26utm_medium%3Dheader" rel="noopener">앱 받기</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">안드로이드 앱 · 회원가입 없음</p>
+        <h1>보드판 없이,<br>사진에 현장 기록을 남깁니다</h1>
+        <p class="lead">공사 사진에 공사명·공종·위치·내용·일자를 표 스탬프로 넣어 앨범에 바로 저장합니다. 화이트보드에 적어 들고 찍지 않아도 됩니다.</p>
+        <div class="ctas">
+          <a class="badge-play" href="https://play.google.com/store/apps/details?id=app.boardstamp&amp;referrer=utm_source%3Dsite%26utm_medium%3Dhero" rel="noopener">
+            <img src="/img/ko/google-play-badge.png" width="155" height="60" alt="Google Play에서 다운로드">
+          </a>
+          <p class="soon">iPhone 준비 중</p>
+        </div>
+        <ul class="hero-facts">
+          <li>사진은 폰에만 저장됩니다. 서버로 보내지 않습니다.</li>
+          <li>촬영과 스탬프는 인터넷 없이 됩니다.</li>
+          <li>회원가입 없이 바로 씁니다.</li>
+        </ul>
+      </div>
+      <div class="hero-shot">
+        <figure class="shot-frame">
+          <img class="od-media" src="/img/ko/shot-1.webp" width="720" height="1280" alt="현장스탬프 메인 화면: 현장 이름, 스탬프가 찍힌 사진 미리보기, 이번에 찍힐 공사명·공종·위치·내용·타임스탬프 표, 가져오기와 촬영 버튼" fetchpriority="high">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="sec-label">스탬프</p>
+      <h2>사진 위에 이런 표가 찍힙니다</h2>
+      <p class="sec-note">항목 이름과 순서는 현장 서식에 맞춰 바꿀 수 있습니다. 아래는 입력 예시입니다.</p>
+      <div class="sec-body stamp-wrap">
+        <div class="plate">
+          <table class="stamp">
+            <caption>스탬프 예시</caption>
+            <tbody>
+              <tr><th scope="row">공사명</th><td>○○아파트 101동 내부 리모델링</td></tr>
+              <tr><th scope="row">공종</th><td>도배</td></tr>
+              <tr><th scope="row">위치</th><td>101동 1203호 거실</td></tr>
+              <tr><th scope="row">내용</th><td>초배지 작업 완료</td></tr>
+              <tr><th scope="row">일자</th><td><span class="od-nowrap">2026-11-24</span> <span class="od-nowrap">14:08</span></td></tr>
+            </tbody>
+          </table>
+          <p class="stamp-foot">좌표 37.5012, 127.0396 · 고도 38m · 촬영 시각까지 함께 남길 수 있습니다.</p>
+        </div>
+        <div>
+          <ul class="shape-list">
+            <li><b>표 형태</b> — 칸이 나뉜 현장 표 모양입니다.</li>
+            <li><b>줄글 형태</b> — 한 줄씩 이어 쓰는 모양입니다.</li>
+            <li><b>스타일 6가지</b> — 흰색, 배경 없음, 유리(어둡게·밝게), 검정, 칠판</li>
+          </ul>
+          <p class="sec-note">스탬프는 사진 네 모서리 중 한 곳에 두고, 크기도 고를 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="sec-label">사용법</p>
+      <h2>세 단계로 끝납니다</h2>
+      <div class="sec-body steps">
+        <div class="step">
+          <p class="step-no">1</p>
+          <h3>한 번 입력합니다</h3>
+          <p>공사명·공종·위치·내용을 적습니다. 적은 내용은 다음 촬영에도 그대로 남습니다.</p>
+        </div>
+        <div class="step">
+          <p class="step-no">2</p>
+          <h3>촬영 버튼을 누릅니다</h3>
+          <p>폰 카메라로 찍습니다. 찍은 날짜와 주소는 자동으로 들어갑니다.</p>
+        </div>
+        <div class="step">
+          <p class="step-no">3</p>
+          <h3>앨범에 바로 저장됩니다</h3>
+          <p>스탬프가 들어간 사진이 현장별 앨범에 저장됩니다. 바로 공유할 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="sec-label">주요 기능</p>
+      <h2>현장에서 쓰는 것만 담았습니다</h2>
+      <div class="sec-body feats">
+        <div class="feat">
+          <p class="feat-no">01</p>
+          <h3>날짜·주소 자동 입력</h3>
+          <p>찍은 날짜와 찍은 곳의 주소가 스탬프에 자동으로 들어갑니다.</p>
+        </div>
+        <div class="feat">
+          <p class="feat-no">02</p>
+          <h3>좌표·고도·촬영 시각</h3>
+          <p>위도와 경도, 고도, 촬영 시각을 함께 남기고 사진 파일에도 GPS를 기록합니다.</p>
+        </div>
+        <div class="feat">
+          <p class="feat-no">03</p>
+          <h3>작업사진·타임스탬프 템플릿</h3>
+          <p>기본 템플릿 두 가지로 바로 시작하고, 새 템플릿도 만들 수 있습니다.</p>
+        </div>
+        <div class="feat">
+          <p class="feat-no">04</p>
+          <h3>항목 추가·삭제·순서 변경</h3>
+          <p>필요한 항목만 남기고 순서도 서식대로 바꿉니다.</p>
+        </div>
+        <div class="feat">
+          <p class="feat-no">05</p>
+          <h3>최근 입력값</h3>
+          <p>전에 쓴 내용을 골라 넣어 다시 적지 않습니다.</p>
+        </div>
+        <div class="feat">
+          <p class="feat-no">06</p>
+          <h3>스탬프 위치·크기·스타일</h3>
+          <p>네 모서리 위치와 크기, 스타일 6가지 중에서 고릅니다.</p>
+        </div>
+        <div class="feat">
+          <p class="feat-no">07</p>
+          <h3>현장별 앨범</h3>
+          <p>현장마다 앨범이 나뉘어 지난 사진을 찾기 쉽습니다.</p>
+        </div>
+        <div class="feat">
+          <p class="feat-no">08</p>
+          <h3>여러 장 한 번에</h3>
+          <p>앨범에 있는 사진을 여러 장 골라 한 번에 스탬프를 넣습니다.</p>
+        </div>
+        <div class="feat">
+          <p class="feat-no">09</p>
+          <h3>원본 함께 저장</h3>
+          <p>스탬프 사진과 원본 사진을 같이 저장해 둘 수 있습니다.</p>
+        </div>
+        <div class="feat">
+          <p class="feat-no">10</p>
+          <h3>바로 공유</h3>
+          <p>저장한 사진을 카카오톡, 문자 등으로 바로 보냅니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="sec-label">화면</p>
+      <h2>앱 화면 모음</h2>
+      <p class="sec-note">Google Play 스토어에 올린 소개 화면입니다.</p>
+    </div>
+    <div class="sec-body shots od-rail">
+      <figure>
+        <div class="shot-frame"><img class="od-media" src="/img/ko/shot-1.webp" width="720" height="1280" loading="lazy" alt="찍기만 하면 현장 기록 끝: 메인 화면"></div>
+      </figure>
+      <figure>
+        <div class="shot-frame"><img class="od-media" src="/img/ko/shot-2.webp" width="720" height="1280" loading="lazy" alt="스탬프가 찍힌 사진이 앨범에 저장된 화면"></div>
+      </figure>
+      <figure>
+        <div class="shot-frame"><img class="od-media" src="/img/ko/shot-3.webp" width="720" height="1280" loading="lazy" alt="스탬프 항목을 표처럼 편집하는 화면"></div>
+      </figure>
+      <figure>
+        <div class="shot-frame"><img class="od-media" src="/img/ko/shot-4.webp" width="720" height="1280" loading="lazy" alt="스탬프 위치, 크기, 스타일 설정 화면"></div>
+      </figure>
+      <figure>
+        <div class="shot-frame"><img class="od-media" src="/img/ko/shot-5.webp" width="720" height="1280" loading="lazy" alt="현장별 앨범으로 사진을 정리하는 화면"></div>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="sec-label">대상</p>
+      <h2>이런 분께 알맞아요</h2>
+      <ul class="sec-body who">
+        <li><span class="mark" aria-hidden="true">✓</span><p>도배·도장·방수 현장에서 작업하는 분</p></li>
+        <li><span class="mark" aria-hidden="true">✓</span><p>설비·전기·인테리어 시공을 맡은 분</p></li>
+        <li><span class="mark" aria-hidden="true">✓</span><p>공정 사진을 정리해 제출하는 현장 관리자</p></li>
+        <li><span class="mark" aria-hidden="true">✓</span><p>작업 전후 사진을 날짜별로 남겨야 하는 분</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="sec-label">FAQ</p>
+      <h2>자주 묻는 질문</h2>
+      <div class="sec-body faq">
+        <details>
+          <summary>무료인가요? 광고가 있나요?</summary>
+          <p class="answer">무료로 쓸 수 있고, 촬영 결과 화면 아래에 작은 배너 광고가 하나 있습니다.</p>
+        </details>
+        <details>
+          <summary>인터넷 없이도 되나요?</summary>
+          <p class="answer">촬영과 스탬프는 인터넷 없이 됩니다. 주소 자동 입력은 인터넷이 필요할 수 있습니다.</p>
+        </details>
+        <details>
+          <summary>사진이 서버로 전송되나요?</summary>
+          <p class="answer">전송되지 않습니다. 사진과 스탬프 내용은 폰에만 저장되고, 회원가입도 없습니다.</p>
+        </details>
+        <details>
+          <summary>아이폰에서도 쓸 수 있나요?</summary>
+          <p class="answer">준비 중입니다. 지금은 안드로이드에서 쓸 수 있습니다.</p>
+        </details>
+        <details>
+          <summary>이미 찍어 둔 사진에도 넣을 수 있나요?</summary>
+          <p class="answer">네. 가져오기 버튼으로 앨범의 사진을 여러 장 골라 한 번에 스탬프를 넣을 수 있습니다.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-links">
+        <a href="/privacy.html">개인정보처리방침</a>
+        <a href="mailto:ssancoding@gmail.com">문의하기</a>
+        <a href="/en/" lang="en" hreflang="en">English</a>
+      </p>
+    </div>
+    <dl class="foot-meta">
+      <dt>앱</dt><dd>현장스탬프 (BoardStamp) · 안드로이드</dd>
+      <dt>운영</dt><dd>ssanPD</dd>
+      <dt>문의</dt><dd>ssancoding@gmail.com</dd>
+    </dl>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // 브라우저 언어가 한국어가 아니면 영어 페이지 안내 막대를 보여 준다(자동 이동은 하지 않음: 검색 색인 보호).
+  var KEY = 'bs-lang-bar-closed';
+  var lang = (navigator.language || 'ko').toLowerCase();
+  var closed = false;
+  try { closed = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  if (lang.indexOf('ko') === 0 || closed) return;
+  var bar = document.getElementById('lang-bar');
+  bar.hidden = false;
+  document.getElementById('lang-bar-close').addEventListener('click', function () {
+    bar.hidden = true;
+    try { localStorage.setItem(KEY, '1'); } catch (e) {}
+  });
+})();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0c1ea7ea4ba44bdbac27b24f19ea35ee"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
